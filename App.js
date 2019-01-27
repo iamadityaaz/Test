@@ -16,7 +16,7 @@ export default class App extends Component {
   constructor(){
     super()
     this.state = {
-      textLength: 0
+      display: 'none'
     }
   }
 
@@ -38,11 +38,11 @@ export default class App extends Component {
 
       <View style = {styles.boxTwo}>
       
-      <Text style = {{fontSize:24, fontWeight:'bold', marginHorizontal: 18 , color:'black'}}>
+      <Text style = {{fontSize:28, fontWeight:'700', marginHorizontal: 18 , color:'black'}}>
         Welcome Back!
       </Text>
 
-      <Text style = {{fontSize:14, marginHorizontal: 18, color:'#eeeeee'}}>
+      <Text style = {{fontSize:14, marginHorizontal: 18, color:'#2c2c2c'}}>
         There is a lot to learn
       </Text>
 
@@ -64,26 +64,19 @@ export default class App extends Component {
       onChangeText= {(text)=> this.setState({textLength : text.length}, showAlert = () =>{
         if(text.length > 7){
           // Works on both iOS and Android
-          Alert.alert(
-            'Alert Title',
-            'My Alert Msg',
-            [
-              {text: 'Ask me later', onPress: () => console.log('Ask me later pressed')},
-              {
-                text: 'Cancel',
-                onPress: () => console.log('Cancel Pressed'),
-                style: 'cancel',
-              },
-              {text: 'OK', onPress: () => console.log('OK Pressed')},
-            ],
-            {cancelable: false},
-          );
+          this.setState({display : 'flex'})
+        }else{
+          this.setState({display: 'none'})
         }
       })}>
       </TextInput>
       </TextInputLayout>
 
-      <Text style = {{fontSize:14, marginHorizontal: 18, marginVertical: 11 , color:'black', fontWeight: '500'}}>
+      <Text style = {{display: this.state.display, fontSize: 14, color: 'green', marginHorizontal: 18}}>
+      Thats looks good!
+      </Text>
+
+      <Text style = {{fontSize:14, marginHorizontal: 18, marginVertical: 11 , color:'black', fontWeight: '300'}}>
         Forgot password ?
       </Text>
 
