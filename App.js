@@ -10,21 +10,6 @@ import React, {Component} from 'react';
 import {StyleSheet, Text, View, TextInput, Image, Alert} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { TextInputLayout } from 'rn-textinputlayout';
-import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
-import {
-  Kaede,
-  Hoshi,
-  Jiro,
-  Isao,
-  Madoka,
-  Akira,
-  Hideo,
-  Kohana,
-  Makiko,
-  Sae,
-  Fumi,
-} from 'react-native-textinput-effects';
-
 
 export default class App extends Component {
 
@@ -44,8 +29,7 @@ export default class App extends Component {
 
       <View style={styles.boxOne}>
       <Image style = {{ width: 50,height: 50, alignSelf: 'center'}}
-          source={require('/home/aditya/react-native/Test/ppp.png')}
-        />
+          source={require('/home/aditya/react-native/Test/ppp.png')}/>
         <Text style = {{fontSize:24, color:'#8e8c99', alignSelf: 'center'}}>
         Fill it
       </Text>
@@ -76,6 +60,7 @@ export default class App extends Component {
       placeholder={'Password'}
       secureTextEntry={true}
       onChangeText= {(text)=> this.setState({textLength : text.length}, showAlert = () =>{
+        //check for the password entered length
         if(text.length > 7){
           // Works on both iOS and Android
           this.setState({display : 'flex'})
