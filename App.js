@@ -10,6 +10,21 @@ import React, {Component} from 'react';
 import {StyleSheet, Text, View, TextInput, Image, Alert} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { TextInputLayout } from 'rn-textinputlayout';
+import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
+import {
+  Kaede,
+  Hoshi,
+  Jiro,
+  Isao,
+  Madoka,
+  Akira,
+  Hideo,
+  Kohana,
+  Makiko,
+  Sae,
+  Fumi,
+} from 'react-native-textinput-effects';
+
 
 export default class App extends Component {
 
@@ -31,8 +46,8 @@ export default class App extends Component {
       <Image style = {{ width: 50,height: 50, alignSelf: 'center'}}
           source={require('/home/aditya/react-native/Test/ppp.png')}
         />
-        <Text style = {{fontSize:24, color:'black', alignSelf: 'center'}}>
-        Feel it
+        <Text style = {{fontSize:24, color:'#8e8c99', alignSelf: 'center'}}>
+        Fill it
       </Text>
       </View>
 
@@ -50,9 +65,8 @@ export default class App extends Component {
 
 
       <View style={styles.boxThree}>
-
       <TextInputLayout style = {styles.inputLayout}>
-      <TextInput style = {{fontSize: 16, height: 40 }}
+      <TextInput style = {styles.textInput}
       placeholder={'Email'}>
       </TextInput>
       </TextInputLayout>
@@ -76,20 +90,19 @@ export default class App extends Component {
       Thats looks good!
       </Text>
 
-      <Text style = {{fontSize:14, marginHorizontal: 18, marginVertical: 11 , color:'black', fontWeight: '300'}}>
+      <Text style = {{fontSize:14, marginHorizontal: 18, marginVertical: 22 , color:'black', fontWeight: '300'}}>
         Forgot password ?
       </Text>
 
-      <LinearGradient start={{x: 0, y: 0}} end={{x: 1, y: 0}} colors={['#ffcc99' , '#6600ff']} style={styles.linearGradient}>
+      <LinearGradient start={{x: 0, y: 0}} end={{x: 1, y: 0}} colors={['#783ad0' , '#6892ff']} style={styles.linearGradient}>
       <Text style = {styles.textStyle}>
       Log In
       </Text>
       </LinearGradient>
 
-      </View>
 
       </View>
-
+      </View>
       </View>
     );
   }
@@ -107,8 +120,7 @@ const styles = StyleSheet.create({
     backgroundColor:'#ffffff'
   },
   boxContainer:{
-    flex: 1,
-    flexDirection: 'column'
+    flex: 1
   },
   boxOne:{
     flex: 1,
@@ -116,10 +128,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row'
   },
   boxTwo:{
-    flex: 1
+    flex: 1,
+    justifyContent: 'center',
   },
   boxThree:{
-    flex: 4
+    flex: 3
   },
   textInput: {
     fontSize: 16,
@@ -127,16 +140,15 @@ const styles = StyleSheet.create({
   },
   inputLayout: {
     marginTop: 16,
-    marginHorizontal: 18,
-    
+    marginHorizontal: 18
   },
   linearGradient: {
-    marginHorizontal: 18
+    marginHorizontal: 18,
+    borderRadius: 8,
   },
   textStyle:{
     alignSelf: 'center',
     fontSize: 18,
-    marginTop: 8,
-    marginBottom: 8
+    marginVertical: 14
   }
 });
